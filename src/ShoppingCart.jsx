@@ -39,9 +39,11 @@ export const ShoppingCart = () => {
   }
 
 
-  const byPrice = (id) =>{
-
-    
+  const getCurrentPrice = (index) =>{
+     
+    if(itemsFlat[index] === 0){
+      return JSON.stringify(itemsFlat[0].price)
+    }    
 
   }
 
@@ -94,11 +96,11 @@ export const ShoppingCart = () => {
             <div className='card-info'>
               <p className='h3 text-center' >{items.name}</p>
               <p className='quantity h4'> Quantity  +{getCurrentQuantity(index)}</p>
-              <p className='total h3'> Total: {items.price}</p>
+              <p className='total h3'> Total: {items.price}  {getCurrentPrice(index)}</p>
               <p className='ms-5'>Price: {items.price}</p>
               <p className='ms-5'>Brand: {items.brand}</p>
               <p className='ms-5'>Describtion: {items.describtion}</p>
-              <div className='d-flex justify-content-center' >
+              <div className='d-flex justify-content-end' >
                 <button className='btn btn-primary btn-remove' onClick={() => addQuantity(index)}>+</button>
                 <button className='btn btn-danger btn-remove' onClick={() => removeQuantity(index)}>-</button>
               </div>

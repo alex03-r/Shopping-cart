@@ -5,6 +5,7 @@ export const BuyScreen = () => {
 
     <div>
         <h1 className='ms-5'>Buy now</h1>
+        
     </div>
   )
 }
