@@ -12,16 +12,14 @@ export const ProductsSelected = () => {
 
   const { index } = useSelector(state => state.itemSelected)
 
-  const { id,img, name, price, brand, size, describtion } = products[index]
+  const { id,img, name, price, brand, size, describtion } = products[index];
 
   const dispatch = useDispatch();
 
 
   const addItem = () => {
-
-    dispatch(increment())
-    dispatch(byId(id))
-
+    dispatch(increment());
+    dispatch(byId(id));
   }
 
   return (
@@ -37,7 +35,7 @@ export const ProductsSelected = () => {
           <p className='card-text'><b>Brand: </b>{brand}</p>
           <p className='card-text'><b>Zise: </b> {size}</p>
           <p className='card-text'><b>Describtion: </b>{describtion}</p>
-          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={addItem}>+Add to Cart</Link>
+          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={ addItem}>+Add to Cart</Link>
           <Link to ='/buynow' className='btn btn-primary mt-2' >!Buy Now</Link>
         </div>
 

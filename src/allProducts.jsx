@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const AllProducts = [
     {
-        id: uuidv4(),
+        id: 20,
         name:'Laptop',  
         price:400,
         brand:'HP',
@@ -14,7 +14,7 @@ export const AllProducts = [
 
     },
     {
-        id:uuidv4(),
+        id:21,
         name:'Tablet Fire',  
         price:200,
         brand:'HP',
@@ -23,7 +23,7 @@ export const AllProducts = [
         img:'tablet.png'         
     },
     {
-        id:uuidv4(),
+        id:22,
         name:'Mouse inalámbrico ',  
         price:300,
         brand:'Lenovo',
@@ -32,7 +32,7 @@ export const AllProducts = [
         img:'mouse.png'          
     },
     {
-        id:uuidv4(),
+        id:23,
         name:'Fire TV Stick 4K ',  
         price:400,
         brand:'Fire TV Stick 4K',

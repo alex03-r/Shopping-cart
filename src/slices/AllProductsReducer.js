@@ -1,42 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AllProducts } from '../allProducts'
 
- export const AllProductsReducer = createSlice({
-    name:'allData',
-    initialState:{
-        products: AllProducts,
-        cardItem:[], 
-           
-               
-    },
-    reducers:{
-         byId:(state, action) =>{
-           
-            console.log(state.cardItem)
-          let product =   state.products.filter( function(product){
+export const AllProductsReducer = createSlice({
+  name: 'allData',
+  initialState: {
+    products: AllProducts,
+    cardItem: [],
+  },
+  reducers: {
 
-               return product.id == action.payload
-          });
-         // console.log(product.t);
-         // let money = state.cardItem.includes(product[0].t) ;
-                       
-           if(state.cardItem.length >= 4){    
+    byId: (state, action) => {
+      let product = state.products.filter(product => product.id === action.payload);
+      console.log(product.flat())
 
-           return null;
+      if (state.cardItem.length >= 4) {
 
-           } else  if(state.cardItem.includes(product[0])){ 
-            return null;
-         }
-           else{
+        return null;
 
-            state.cardItem.push(product)
-           }          
-         } ,
-         incrementFirst:(state , action)=>{
+      } else {
+        // write the if here
+        state.cardItem.push(product);
 
-          // state.products. 
-         }
+
+      }
+
     }
+  }
 })
 
 export const { byId } = AllProductsReducer.actions

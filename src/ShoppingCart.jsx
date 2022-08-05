@@ -23,6 +23,7 @@ export const ShoppingCart = () => {
   const { cardItem } = useSelector(state => state.allData)
 
   let itemsFlat = cardItem.flat();
+  //console.log(cardItem);
 
   const getCurrentQuantity = (i) => {
 
@@ -41,9 +42,9 @@ export const ShoppingCart = () => {
 
   const getCurrentPrice = (index) =>{
      
-    if(itemsFlat[index] === 0){
-      return JSON.stringify(itemsFlat[0].price)
-    }    
+    // if(itemsFlat[index] === 0){
+    //   return JSON.stringify(itemsFlat[0].price)
+    // }    
 
   }
 
