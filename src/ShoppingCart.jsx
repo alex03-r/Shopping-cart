@@ -22,7 +22,7 @@ export const ShoppingCart = () => {
 
   const { cardItem } = useSelector(state => state.allData)
 
-  let itemsFlat = cardItem.flat();
+  let itemsFlat = cardItem;
   //console.log(cardItem);
 
   const getCurrentQuantity = (i) => {

@@ -22,6 +22,10 @@ export const ProductsSelected = () => {
     dispatch(byId(id));
   }
 
+  const buyNowItem = () =>{
+    console.log('buy!')
+  }
+
   return (
     <div className='container mt-5'>
       <div className='d-flex items-parent justify-content-center aling-items-center '>
@@ -31,14 +35,14 @@ export const ProductsSelected = () => {
         </div>
         <div className='item-selected-desc'>
           <h3 className='text-center mb-5'>Info about the {name}</h3>
-          <p className='card-text'><b>Price: </b> {price}</p>
+          <p></p>
+          <p className='card-text'><b>Price: </b> {price} </p>
           <p className='card-text'><b>Brand: </b>{brand}</p>
           <p className='card-text'><b>Zise: </b> {size}</p>
           <p className='card-text'><b>Describtion: </b>{describtion}</p>
-          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={ addItem}>+Add to Cart</Link>
-          <Link to ='/buynow' className='btn btn-primary mt-2' >!Buy Now</Link>
+          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={ addItem }>+Add to Cart</Link>
+          <Link to ='/buynow' className='btn btn-primary mt-2' onClick={buyNowItem} >!Buy Now</Link>
         </div>
-
       </div>
     </div>
   )

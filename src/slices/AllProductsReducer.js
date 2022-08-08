@@ -10,8 +10,10 @@ export const AllProductsReducer = createSlice({
   reducers: {
 
     byId: (state, action) => {
-      let product = state.products.filter(product => product.id === action.payload);
-      console.log(product.flat())
+
+      let product = state.products.find(  product => product.id === action.payload );
+      console.log(product);
+      console.log( action.payload  )
 
       if (state.cardItem.length >= 4) {
 
@@ -19,6 +21,9 @@ export const AllProductsReducer = createSlice({
 
       } else {
         // write the if here
+        if(state.cardItem.includes(product.id == action.payload)){
+          console.log('si esta')
+        }
         state.cardItem.push(product);
 
 
