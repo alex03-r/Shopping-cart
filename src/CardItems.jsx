@@ -2,7 +2,7 @@
 
 export const CardItems = ({ id, img, name, quantity, price, brand, describtion }) => {
     return (
-        <div key={id} className='card-container d-flex'>
+        <div  className='card-container d-flex'>
             <img src={require(`./img/${img}`)} className='img-Cart' />
             <div className='card-info'>
                 <p className='h3 text-center' >{name}</p>

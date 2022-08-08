@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { CardItems } from './CardItems';
 
 export const ShoppingCart = () => {
@@ -11,9 +11,9 @@ export const ShoppingCart = () => {
     <div className='container mt-4'>
       <h1 className='h2'>Cart</h1>
       {
-        cardItem.map((items, index) => {
-          <CardItems {...items} />
-        })
+        cardItem.map((items, index) => 
+        (<CardItems key={items.id} {...items} />)  
+        )
       }
     </div>
   )
