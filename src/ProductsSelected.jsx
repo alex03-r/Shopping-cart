@@ -1,29 +1,22 @@
 import React from 'react'
 import './style.css'
 import { increment } from './slices/ItemReducer'
-import { byId } from './slices/AllProductsReducer'
+import { addToCard } from './slices/AllProductsReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link   } from 'react-router-dom'
-
+import  products  from './data/products.json'
 
 export const ProductsSelected = () => {
 
-  const { products } = useSelector((state) => state.allData)
 
-  const { index } = useSelector(state => state.itemSelected)
-
+  const { index } = useSelector( state => state.allData  )
   const { id,img, name, price, brand, size, describtion } = products[index];
 
   const dispatch = useDispatch();
 
-
   const addItem = () => {
     dispatch(increment());
-    dispatch(byId(id));
-  }
-
-  const buyNowItem = () =>{
-    console.log('buy!')
+    dispatch(addToCard(id));
   }
 
   return (
@@ -40,8 +33,7 @@ export const ProductsSelected = () => {
           <p className='card-text'><b>Brand: </b>{brand}</p>
           <p className='card-text'><b>Zise: </b> {size}</p>
           <p className='card-text'><b>Describtion: </b>{describtion}</p>
-          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={ addItem }>+Add to Cart</Link>
-          <Link to ='/buynow' className='btn btn-primary mt-2' onClick={buyNowItem} >!Buy Now</Link>
+          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={ addItem }>+Add to Cart</Link>          
         </div>
       </div>
     </div>

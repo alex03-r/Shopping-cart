@@ -3,20 +3,19 @@ import './style.css'
 // import { AllProducts } from './allProducts'
 import { Products} from './Products'
 
-import { useSelector , useDispatch } from 'react-redux'
+import  products  from './data/products.json'
 
-import { getIndex } from './slices/itemSelectedReducer'
+import { useDispatch } from 'react-redux'
+
+import { getIndex } from './slices/AllProductsReducer'
 
 
 export const Main = () => {
 
-    const { products  } = useSelector((state) => state.allData);
-
     const dispatch =   useDispatch();
 
     const selectByIndex =  (i) => {
-  
-        dispatch(getIndex(i));
+          dispatch(getIndex(i));
     }
 
     return (

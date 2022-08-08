@@ -18,17 +18,12 @@ export const Nav = () => {
       <div className='d-flex align-items-center ms-5 '>
 
         <Link to="/" className='link'>Home</Link>
-
-        {/* <Link to="/products" className='link'>Products</Link> */}
-
       </div>
-
       <div className='d-flex align-items-center me-3'>
 
         <NavLink to='/shoppingcart' className='shpCart  linkAmount'>
-              <i class="bi bi-cart"></i>              
+          <i class="bi bi-cart"></i>
         </NavLink>
-
         <div className='cardAmount'>{item} </div>
       </div>
 
