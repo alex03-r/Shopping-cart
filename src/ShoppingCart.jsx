@@ -7,22 +7,23 @@ import { incremetByQuantity } from './slices/AllProductsReducer'
 export const ShoppingCart = () => {
 
   const { cardItem } = useSelector(state => state.allData);
+  // console.log(cardItem);
 
   let dispatch = useDispatch();
 
-  function increme(item){
+  function increme(id){
 
-    dispatch(incremetByQuantity(item));
+    dispatch(incremetByQuantity(id));
   }
   
   return (
 
     <div className='container mt-4'>
-      <h1 className='h2'>Cart</h1>
+      {/* <h1 className='h2'>Cart</h1> */}
       {
         cardItem.map((items) => 
 
-        (<CardItems key={items.id} {...items} increme={ () =>  increme(items) } />)  
+        (<CardItems key={items.id} {...items} increme={ () =>  increme(items.id) } />)  
         
         )
       }

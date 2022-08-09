@@ -7,7 +7,7 @@ export const Products = ({ index, id, img, name, brand, price, describtion, sele
 
     return (
 
-        <Link to="/products" className='card ' key={id} onClick={() => selectByIndex(index)}>
+        <Link to="/products" className='card '  onClick={() => selectByIndex(index)}>
             <img src={require(`../src/img/${img}`)} className='img' alt='laptop' />
             <div className='card-body'>
                 <p className='card-text'> <b> Name:  </b> {name}  </p>

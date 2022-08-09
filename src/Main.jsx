@@ -28,7 +28,7 @@ export const Main = () => {
                 {
                         products.map((product , index) => {
                             return   <Products 
-                                      {...product}                           
+                                      {...product}    key={product.id}                       
                                       selectByIndex={ () => selectByIndex(index)}
                             /> 
                         })                 
