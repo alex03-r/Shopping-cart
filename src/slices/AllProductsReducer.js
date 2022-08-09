@@ -46,15 +46,13 @@ export const AllProductsReducer = createSlice({
       })
       return { ...state, cardItem: stateCopied } ;      
     }
-    // ,totalPrice:(state) =>{
+    ,removeItem:(state, action) =>{
+       
+       let updated =  state.cardItem.filter(item => item.id !== action.payload );
+       return { ...state, cardItem: updated };
 
-    //   state.cardItem.reduce((prev, currect) => {
-
-    //     return 
-    //   })
-
-    // }
+    }
   }
 });
 
-export const { addToCard, getIndex, incremetByQuantity, decrementByQuantity } = AllProductsReducer.actions ;
+export const { addToCard, getIndex, incremetByQuantity, decrementByQuantity, removeItem } = AllProductsReducer.actions ;

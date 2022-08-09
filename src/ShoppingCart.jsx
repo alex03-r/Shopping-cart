@@ -1,6 +1,6 @@
 
 import { useSelector, useDispatch } from 'react-redux'
-import { incremetByQuantity, decrementByQuantity } from './slices/AllProductsReducer'
+import { incremetByQuantity, decrementByQuantity, removeItem } from './slices/AllProductsReducer'
 import { CardItems } from './CardItems';
 
 import products from './data/products.json'
@@ -24,13 +24,18 @@ export const ShoppingCart = () => {
 
   }
 
+  function deleteItem(id){
+
+    dispatch(removeItem(id));
+  }
+
   return (
 
     <div className='container mt-4'>
       {
         cardItem.map((items) =>
 
-          (<CardItems key={items.id} {...items} increme={() => increme(items.id)} drecreme={() => drecreme(items.id)} />)
+          (<CardItems key={items.id} {...items} increme={() => increme(items.id)} drecreme={() => drecreme(items.id)} deleteItem={() => deleteItem(items.id)} />)
 
         )
       }
