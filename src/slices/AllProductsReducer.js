@@ -43,28 +43,6 @@ export const AllProductsReducer = createSlice({
           return {...item, quantity: item.quantity + 1 }
           }  else{ return  item };
          } )
-      
-      // else {
-      //   console.log("hello")
-      // }
-        // }else{
-
-        //   state.cardItem = [...state.cardItem, {...action.payload,  quantity: 1 } ]
-        // }
-      // } else {
-
-        // state.cardItem = [...state.cardItem, { ...action.payload, quantity: 1 } ]
-        
-
-
-      //     return  item.quantity + 1
-      // state.cardItem.map(item => {
-      //   if (item.id == item.id) {
-      //     return [...item, item.quantity + 1]
-
-      //   }
-      // })
-
     
   }
 }
