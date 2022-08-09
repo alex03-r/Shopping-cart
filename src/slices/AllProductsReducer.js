@@ -14,45 +14,56 @@ export const AllProductsReducer = createSlice({
 
     addToCard: (state, action) => {
 
-      let product = products.find(product => product.id === action.payload);
-      console.log(product);
-      // console.log( action.payload )
-      if (state.cardItem.length >= 4) {
-
-        return null;
-
-      } 
-      else {
-        //  if(state.cardItem.includes(product)) {
-
-        //   alert('this item is already in the card ')
-        // }
-        // write the if here
-        // if(state.cardItem.includes(product.id == action.payload)){
-        //   console.log('si esta')
-        // }
-        let newItem = {}
-        newItem.id = product.id;
-        newItem.name = product.name;
-        newItem.price = product.price;
-        newItem.brand = product.brand;       
-        newItem.size = product.size;
-        newItem.describtion = product.describtion;
-        newItem.img = product.img;
-        newItem.quantity = 1;
-       
-     
-
-        state.cardItem = [...state.cardItem, newItem ]
-
-      }
-
+      let product = products.find(product => product.id === action.payload);       
+      
+      state.cardItem = [...state.cardItem, {...product ,quantity: 1 } ];   
     },
     getIndex: (state, action) => {
 
       state.index = action.payload
     },
-  }
-})
 
-export const { addToCard, getIndex } = AllProductsReducer.actions
+    incremetByQuantity: (state, action) => {
+
+    
+      console.log(action.payload);
+      // let exist = state.cardItem.find(item => item.id === action.payload.id);
+
+      // if (exist) {
+      state.cardItem.map(item =>{
+
+        if(item.id === action.payload){
+
+        return   { ...item, quantity: item.quantity + 1 } 
+        }  
+
+       }       
+        )
+      
+      // else {
+      //   console.log("hello")
+      // }
+        // }else{
+
+        //   state.cardItem = [...state.cardItem, {...action.payload,  quantity: 1 } ]
+        // }
+      // } else {
+
+        // state.cardItem = [...state.cardItem, { ...action.payload, quantity: 1 } ]
+        
+
+
+      //     return  item.quantity + 1
+      // state.cardItem.map(item => {
+      //   if (item.id == item.id) {
+      //     return [...item, item.quantity + 1]
+
+      //   }
+      // })
+
+    
+  }
+}
+});
+
+export const { addToCard, getIndex, incremetByQuantity } = AllProductsReducer.actions

@@ -12,9 +12,9 @@ export const ItemReducer = createSlice({
         increment: (state, action) =>{
             state.item +=1
         },
-        decrement:(state, action)=>{
 
-        }
+
+       
 
     }
 
