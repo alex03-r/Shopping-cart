@@ -3,31 +3,31 @@ import './style.css'
 import { increment } from './slices/ItemReducer'
 import { addToCard } from './slices/AllProductsReducer'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link , Navigate  } from 'react-router-dom'
-import  products  from './data/products.json'
+import { Link, Navigate } from 'react-router-dom'
+import products from './data/products.json'
 
 export const ProductsSelected = () => {
 
+  const { index, cardItem } = useSelector(state => state.allData)
 
-  const { index, cardItem } = useSelector( state => state.allData  )
-  const { id,img, name, price, brand, size, describtion } = products[index];
+  const { id, img, name, price, brand, size, describtion } = products[index];
 
   const dispatch = useDispatch();
 
   const addItem = () => {
 
-     let itemExist = cardItem.find( product => product.id === id )
-    //  let history = useHistory();
-     if(itemExist){
+    let exist
+    exist = cardItem.find(product => product.id === id)
 
-     // history.push("/shoppingcart");
-      // <Redirect to="/shoppingcart" />
+    if (exist) {
+
+      alert('this item has been added already');
       <Navigate to='/shoppingcart' />
       return null;
-     }
-  
-     dispatch(increment());
-     dispatch(addToCard(id));  
+    }
+
+    dispatch(increment());
+    dispatch(addToCard(id));
 
   }
 
@@ -45,7 +45,7 @@ export const ProductsSelected = () => {
           <p className='card-text'><b>Brand: </b>{brand}</p>
           <p className='card-text'><b>Zise: </b> {size}</p>
           <p className='card-text'><b>Describtion: </b>{describtion}</p>
-          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={ addItem }>+Add to Cart</Link>          
+          <Link to='/shoppingcart' className='btn btn-danger mt-5' onClick={addItem}>+Add to Cart</Link>
         </div>
       </div>
     </div>

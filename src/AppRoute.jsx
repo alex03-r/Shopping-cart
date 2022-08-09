@@ -22,7 +22,7 @@ export const AppRoute = () => {
                 <Routes>
                    <Route exact path="/" element={<Main />}></Route>
                     <Route exact path="/products" element={<ProductsSelected />}></Route>                    
-                    <Route exact path='/shoppingcart' element={<ShoppingCart />}></Route>                   
+                    <Route exact path='/shoppingcart' element={<ShoppingCart />}></Route>                 
 
                 </Routes>
             </div>
