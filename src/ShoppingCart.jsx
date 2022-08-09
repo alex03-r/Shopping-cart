@@ -10,9 +10,9 @@ export const ShoppingCart = () => {
 
   let dispatch = useDispatch();
 
-  function increme(id){
+  function increme(item){
 
-    dispatch(incremetByQuantity(id));
+    dispatch(incremetByQuantity(item));
   }
   
   return (
@@ -22,7 +22,7 @@ export const ShoppingCart = () => {
       {
         cardItem.map((items) => 
 
-        (<CardItems key={items.id} {...items} increme={ () =>  increme(items.id) } />)  
+        (<CardItems key={items.id} {...items} increme={ () =>  increme(items) } />)  
         
         )
       }

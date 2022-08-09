@@ -18,7 +18,7 @@ export const CardItems = (props) => {
                 <p className='ms-5'>Brand: {props.brand}</p>
                 <p className='ms-5'>Describtion: {props.describtion}</p> 
                 <div className='d-flex justify-content-end' >
-                    <button onClick={() => increme(props.id)} className='btn btn-primary btn-remove' >+</button>
+                    <button onClick={() => increme(props)} className='btn btn-primary btn-remove' >+</button>
                     <button className='btn btn-danger btn-remove' >-</button>
                 </div>
             </div>

@@ -25,20 +25,24 @@ export const AllProductsReducer = createSlice({
 
     incremetByQuantity: (state, action) => {
 
-    
-      console.log(action.payload);
-      // let exist = state.cardItem.find(item => item.id === action.payload.id);
 
-      // if (exist) {
-      state.cardItem.map(item =>{
+      let exist = products.find(x => x.id === action.payload.id);
+      console.log(exist)
+   
+    //  return state.cardItem.map(item =>{
 
-        if(item.id === action.payload){
+    //     if(item.id === action.payload){
 
-        return   { ...item, quantity: item.quantity + 1 } 
-        }  
+    //     return  {...item, quantity: item.quantity + 1 }
+    //     }  
+    //    } )
+    return   state.cardItem.map(item =>{
 
-       }       
-        )
+          if(item.id === action.payload.id){
+  
+          return {...item, quantity: item.quantity + 1 }
+          }  else{ return  item };
+         } )
       
       // else {
       //   console.log("hello")
