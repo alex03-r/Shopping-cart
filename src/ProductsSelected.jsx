@@ -3,20 +3,32 @@ import './style.css'
 import { increment } from './slices/ItemReducer'
 import { addToCard } from './slices/AllProductsReducer'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link   } from 'react-router-dom'
+import { Link , Navigate  } from 'react-router-dom'
 import  products  from './data/products.json'
 
 export const ProductsSelected = () => {
 
 
-  const { index } = useSelector( state => state.allData  )
+  const { index, cardItem } = useSelector( state => state.allData  )
   const { id,img, name, price, brand, size, describtion } = products[index];
 
   const dispatch = useDispatch();
 
   const addItem = () => {
-    dispatch(increment());
-    dispatch(addToCard(id));
+
+     let itemExist = cardItem.find( product => product.id === id )
+    //  let history = useHistory();
+     if(itemExist){
+
+     // history.push("/shoppingcart");
+      // <Redirect to="/shoppingcart" />
+      <Navigate to='/shoppingcart' />
+      return null;
+     }
+  
+     dispatch(increment());
+     dispatch(addToCard(id));  
+
   }
 
   return (

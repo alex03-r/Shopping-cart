@@ -32,7 +32,6 @@ export const AllProductsReducer = createSlice({
         };
       })
       return { ...state, cardItem: stateCopied }
-
     },
     decrementByQuantity:(state, action) => {
 
@@ -45,10 +44,17 @@ export const AllProductsReducer = createSlice({
           return item
         };
       })
-      return { ...state, cardItem: stateCopied }
-      
+      return { ...state, cardItem: stateCopied } ;      
     }
+    // ,totalPrice:(state) =>{
+
+    //   state.cardItem.reduce((prev, currect) => {
+
+    //     return 
+    //   })
+
+    // }
   }
 });
 
-export const { addToCard, getIndex, incremetByQuantity } = AllProductsReducer.actions
+export const { addToCard, getIndex, incremetByQuantity, decrementByQuantity } = AllProductsReducer.actions ;
