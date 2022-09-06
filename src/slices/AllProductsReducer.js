@@ -6,6 +6,7 @@ export const AllProductsReducer = createSlice({
   name: 'allData',
   initialState: {
     cardItem: [],
+    todos:[],
     index: 10
   },
   reducers: {
@@ -45,14 +46,18 @@ export const AllProductsReducer = createSlice({
         };
       })
       return { ...state, cardItem: stateCopied } ;      
-    }
-    ,removeItem:(state, action) =>{
+    },
+    removeItem:(state, action) =>{
        
        let updated =  state.cardItem.filter(item => item.id !== action.payload );
        return { ...state, cardItem: updated };
 
+    },
+    getTodosJson(state, action){
+      
+      state.todos = action.payload;
     }
   }
 });
 
-export const { addToCard, getIndex, incremetByQuantity, decrementByQuantity, removeItem } = AllProductsReducer.actions ;
+export const { addToCard, getIndex, incremetByQuantity, decrementByQuantity, removeItem, getTodosJson } = AllProductsReducer.actions ;

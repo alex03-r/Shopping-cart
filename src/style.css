@@ -7,10 +7,20 @@
    cursor: pointer;
    text-decoration: none;
    color: black;
+   box-shadow: 5px 5px 5px   rgba(156, 159, 159, 0.484); 
+   
 }
+
+.card:hover{
+ 
+    transform: translateX(-3%);
+    color: black;
+}
+
 
 .items-parent{
     margin-top: 20px;
+    margin-left: 10px;
     height: 400px;  
 }
 

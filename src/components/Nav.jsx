@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import '../style.css'
 
 import { useSelector } from 'react-redux'
 
@@ -17,7 +17,7 @@ export const Nav = () => {
 
       <div className='d-flex align-items-center ms-5 '>
 
-        <Link to="/" className='link'>Home</Link>
+        <Link to="/" className='link '>Home</Link>
       </div>
       <div className='d-flex align-items-center me-3'>
 

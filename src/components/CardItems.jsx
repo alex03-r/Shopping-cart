@@ -4,10 +4,9 @@ export const CardItems = (props) => {
 
     const { increme, drecreme, deleteItem } = props;
 
-
     return (
         <div className='card-container d-flex'>
-            <img src={require(`./img/${props.img}`)} alt={props.name} className='img-Cart' />
+            <img src={require(`../img/${props.img}`)} alt={props.name} className='img-Cart' />
             <div className='card-info'>
                 <p className='h3 text-center' >{props.name}</p>
                 <p className='quantity h4'> Quantity {props.quantity > 0 ? props.quantity : 1} </p>
