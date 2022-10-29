@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Navigate } from 'react-router-dom'
-
 import '../style.css'
 import { increment } from '../slices/ItemReducer'
 import { addToCard } from '../slices/AllProductsReducer'

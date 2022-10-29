@@ -5,7 +5,7 @@ export const CardItems = (props) => {
     const { increme, drecreme, deleteItem } = props;
 
     return (
-        <div className='card-container d-flex'>
+        <div className='card-container d-flex mb-3'>
             <img src={require(`../img/${props.img}`)} alt={props.name} className='img-Cart' />
             <div className='card-info'>
                 <p className='h3 text-center' >{props.name}</p>
