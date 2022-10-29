@@ -17,7 +17,7 @@ export const CardItems = (props) => {
                 <div className='d-flex justify-content-end' >
                     <button onClick={() => increme(props.id)} className='btn btn-primary btn-action' >+</button>
                     <button onClick={() => drecreme(props.id)} className='btn btn-danger btn-action' >-</button>
-                    <button onClick={() => deleteItem(props.id)} className='btn btn-danger  w-25'> Remove </button>
+                    <button onClick={() => deleteItem(props.id)} className='btn btn-danger  btn-action'> X </button>
                 </div>
             </div>
         </div>
