@@ -6,7 +6,6 @@ export const AllProductsReducer = createSlice({
   name: 'allData',
   initialState: {
     cardItem: [],
-    todos:[],
     index: 10
   },
   reducers: {
@@ -15,49 +14,45 @@ export const AllProductsReducer = createSlice({
 
       let product = products.find(product => product.id === action.payload);
 
-      state.cardItem = [...state.cardItem, { ...product, quantity: 1, totalPrice:product.price  }];
+      state.cardItem = [...state.cardItem, { ...product, quantity: 1, totalPrice: product.price }];
     },
     getIndex: (state, action) => {
 
       state.index = action.payload
     },
-    incremetByQuantity:(state, action) => {
+    incremetByQuantity: (state, action) => {
 
-      let stateCopied = state.cardItem.map(function (item) {
+      let modifiedState = state.cardItem.map(function (item) {
 
         if (item.id === action.payload) {
-         
-          return { ...item, quantity: item.quantity + 1 , totalPrice: item.totalPrice + item.price }
+
+          return { ...item, quantity: item.quantity + 1, totalPrice: item.totalPrice + item.price }
         } else {
           return item
         };
       })
-      return { ...state, cardItem: stateCopied }
+      return { ...state, cardItem: modifiedState }
     },
-    decrementByQuantity:(state, action) => {
+    decrementByQuantity: (state, action) => {
 
       let stateCopied = state.cardItem.map(function (item) {
 
         if (item.id === action.payload) {
-         
-          return { ...item, quantity: item.quantity - 1 , totalPrice: item.totalPrice - item.price }
+
+          return { ...item, quantity: item.quantity - 1, totalPrice: item.totalPrice - item.price }
         } else {
           return item
         };
       })
-      return { ...state, cardItem: stateCopied } ;      
+      return { ...state, cardItem: stateCopied };
     },
-    removeItem:(state, action) =>{
-       
-       let updated =  state.cardItem.filter(item => item.id !== action.payload );
-       return { ...state, cardItem: updated };
+    removeItem: (state, action) => {
+
+      let updated = state.cardItem.filter(item => item.id !== action.payload);
+      return { ...state, cardItem: updated };
 
     },
-    getTodosJson(state, action){
-      
-      state.todos = action.payload;
-    }
   }
 });
 
-export const { addToCard, getIndex, incremetByQuantity, decrementByQuantity, removeItem, getTodosJson } = AllProductsReducer.actions ;
+export const { addToCard, getIndex, incremetByQuantity, decrementByQuantity, removeItem, getTodosJson } = AllProductsReducer.actions;

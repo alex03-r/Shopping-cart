@@ -17,7 +17,7 @@ export const Main = () => {
 
         <div className='container'>
 
-            <h1 className='ms-lg-5 ms-xl-2'>Main App</h1>
+            <h1 className='ms-lg-5 ms-xl-2'>Shopping Cart</h1>
 
              <div className='row mb-3  ms-lg-5 ms-xl-0  gap-3 justify-content-center justify-content-md-start '>
                 {
